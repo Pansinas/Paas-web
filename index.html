@@ -6,18 +6,19 @@
     <title>Welcome to AI Communication Tool</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
             text-align: center;
-            background-color: #f4f4f4;
+            background: linear-gradient(to right, #0061ff, #60efff);
+            color: white;
             transition: background 0.5s ease;
         }
         header {
-            background-color: #007bff;
-            color: white;
+            background: rgba(0, 0, 0, 0.3);
             padding: 20px;
-            font-size: 24px;
+            font-size: 26px;
+            font-weight: bold;
         }
         .container {
             padding: 50px;
@@ -26,29 +27,30 @@
             display: inline-block;
             padding: 12px 24px;
             margin: 20px;
-            background-color: #007bff;
-            color: white;
+            background-color: #ffcc00;
+            color: #333;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 25px;
             font-size: 18px;
             font-weight: bold;
-            transition: background 0.3s;
+            transition: 0.3s;
             cursor: pointer;
             border: none;
         }
         .btn:hover {
-            background-color: #0056b3;
+            background-color: #ffaa00;
+            transform: scale(1.05);
         }
         .dark-mode {
-            background-color: #333;
+            background: #222;
             color: white;
         }
         .toggle-btn {
             position: absolute;
             top: 20px;
             right: 20px;
-            background-color: #007bff;
-            color: white;
+            background-color: #ffcc00;
+            color: #333;
             padding: 10px 15px;
             border: none;
             cursor: pointer;
@@ -56,25 +58,33 @@
             font-weight: bold;
         }
         .form-container {
-            background: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            border-radius: 15px;
             display: inline-block;
-            margin-top: 20px;
-            width: 300px;
+            width: 320px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
         }
         input {
-            width: 90%;
-            padding: 10px;
+            width: 85%;
+            padding: 12px;
             margin: 10px 0;
             border: none;
-            border-radius: 5px;
+            border-radius: 25px;
             font-size: 16px;
+            text-align: center;
         }
         label {
             display: block;
             font-size: 18px;
             margin-top: 10px;
+            font-weight: bold;
+        }
+        #toggle-auth {
+            cursor: pointer;
+            color: yellow;
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -94,7 +104,7 @@
             <label for="password">Password</label>
             <input type="password" id="password" placeholder="Enter your password" required>
             <button class="btn" onclick="handleAuth()" id="auth-btn">Sign Up</button>
-            <p id="toggle-auth" onclick="toggleAuthMode()" style="cursor:pointer; color:blue;">Already have an account? Sign In</p>
+            <p id="toggle-auth" onclick="toggleAuthMode()">Already have an account? Sign In</p>
         </div>
         
         <a href="nextpage.html" class="btn" id="nextPageBtn" style="display: none;">Next Page</a>
