@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to AI Communication Tool</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
@@ -14,15 +16,32 @@
             color: white;
             transition: background 0.5s ease;
         }
+
         header {
             background: rgba(0, 0, 0, 0.3);
             padding: 20px;
             font-size: 26px;
             font-weight: bold;
+            backdrop-filter: blur(10px);
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
         }
+
         .container {
             padding: 50px;
         }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
         .btn {
             display: inline-block;
             padding: 12px 24px;
@@ -36,15 +55,19 @@
             transition: 0.3s;
             cursor: pointer;
             border: none;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
         }
+
         .btn:hover {
             background-color: #ffaa00;
             transform: scale(1.05);
         }
+
         .dark-mode {
             background: #222;
             color: white;
         }
+
         .toggle-btn {
             position: absolute;
             top: 20px;
@@ -56,7 +79,13 @@
             cursor: pointer;
             border-radius: 5px;
             font-weight: bold;
+            transition: 0.3s;
         }
+
+        .toggle-btn:hover {
+            background-color: #ffaa00;
+        }
+
         .form-container {
             background: rgba(255, 255, 255, 0.2);
             padding: 30px;
@@ -65,7 +94,9 @@
             width: 320px;
             backdrop-filter: blur(10px);
             box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            animation: slideIn 1s ease-in-out;
         }
+
         input {
             width: 85%;
             padding: 12px;
@@ -74,17 +105,51 @@
             border-radius: 25px;
             font-size: 16px;
             text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            transition: 0.3s;
         }
+
+        input:focus {
+            background: rgba(255, 255, 255, 1);
+            outline: none;
+        }
+
         label {
             display: block;
             font-size: 18px;
             margin-top: 10px;
             font-weight: bold;
         }
+
         #toggle-auth {
             cursor: pointer;
             color: yellow;
             text-decoration: underline;
+            transition: 0.3s;
+        }
+
+        #toggle-auth:hover {
+            color: #ffcc00;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
     </style>
 </head>
