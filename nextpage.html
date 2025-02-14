@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to AI Communication Tool</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+        }
+        .container {
+            padding: 50px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        #output {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Welcome to AI Communication Tool
+    </header>
+    <div class="container">
+        <h1>Explore AI-Powered Communication</h1>
+        <p>Start using our intelligent tool for seamless and efficient conversations.</p>
+        <button onclick="startListening()" class="btn">Start Voice Input</button>
+        <p id="output">Your speech will appear here...</p>
+        <a href="index.html" class="btn">Back to Home</a>
+    </div>
+
+    <script>
+        function startListening() {
+            const output = document.getElementById("output");
+            const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+            recognition.lang = "en-US";
+            recognition.start();
+
+            recognition.onresult = function(event) {
+                const transcript = event.results[0][0].transcript;
+                output.textContent = "You said: " + transcript;
+            };
+
+            recognition.onerror = function(event) {
+                output.textContent = "Error occurred: " + event.error;
+            };
+        }
+    </script>
+</body>
+</html>
